@@ -1,30 +1,5 @@
 # Communications APIs Quick Start Application
 
-
-Note: This version has been refactored to use a Developer Token, please generate a client token and update **/scripts/constants.js**
-
-  - Open constants.js and if missing, replace the **API_TOKEN** with your developer token.  You'l need to create an Auth2 token, this token can be created by going to the [Dolby.io Application Summary page](https://dashboard.dolby.io) selecting an app, clicking on the API keys link, then copying your application's API **Consumer Key** and **Consumer secret** somewhere convenient.  Next go to our [REST API Documentation](https://docs.dolby.io/communications-apis/reference/get-client-access-token) and follow the instructions to create the client access token using the code example tool. 
-
-### Alternatively, deploy to Netlify as decribed below, then edit your copy on GitHub and make the following changes in /scripts/client.js
-
-1. Change lines 55 and 56: 
-```
-
-    let token = await developerToken();
-    await VoxeetSDK.initializeToken(token, developerToken);
-
-```
-to 
-```
-    let token = await refreshToken();
-    await VoxeetSDK.initializeToken(token, refreshToken);
-```
-Finally, uncomment the tokenServerURL on line 78:
-```
-// URL to our token-generator function
- const tokenServerURL = './api/token-generator';
- ```
-
 ## About this Workshop and Application (v1.2)
  
 This example is targeted for rapid deployment with Netlify. The example contains a front-end application and a serverless function to authenticate with the Dolby.io API.  
