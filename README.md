@@ -29,6 +29,6 @@ This app requires a Developer Token, you will ned to generate a client token and
   2. Open **/scripts/constants.js** and if missing, replace the **apiToken** value with your developer token.
   3. Run your app! 
       ```
-      VS Code: Select the index.html file and run with live server.
+      VS Code: Select the www/index.html file and run with live server.
       ```
   Congrats! You've just deployed your first Dolby.io Communication API video conference app!
