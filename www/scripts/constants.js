@@ -1,1 +1,0 @@
-let apiToken = '<REPLACE-WITH-YOUR-DEVELOPER-TOKEN>';
