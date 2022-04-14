@@ -1,46 +1,16 @@
 # Communications APIs Quick Start Application
 
-
-Note: This version has been refactored to use a Developer Token, please generate a client token and update **/scripts/constants.js**
-
-  - Open constants.js and if missing, replace the **API_TOKEN** with your developer token.  You'l need to create an Auth2 token, this token can be created by going to the [Dolby.io Application Summary page](https://dashboard.dolby.io) selecting an app, clicking on the API keys link, then copying your application's API **Consumer Key** and **Consumer secret** somewhere convenient.  Next go to our [REST API Documentation](https://docs.dolby.io/communications-apis/reference/get-client-access-token) and follow the instructions to create the client access token using the code example tool. 
-
-### Alternatively, deploy to Netlify as decribed below, then edit your copy on GitHub and make the following changes in /scripts/client.js
-
-1. Change lines 55 and 56: 
-```
-
-    let token = await developerToken();
-    await VoxeetSDK.initializeToken(token, developerToken);
-
-```
-to 
-```
-    let token = await refreshToken();
-    await VoxeetSDK.initializeToken(token, refreshToken);
-```
-Finally, uncomment the tokenServerURL on line 78:
-```
-// URL to our token-generator function
- const tokenServerURL = './api/token-generator';
- ```
-
-## About this Workshop and Application (v1.2)
+## About this Quick Start Application (v quickstart)
  
-This example is targeted for rapid deployment with Netlify. The example contains a front-end application and a serverless function to authenticate with the Dolby.io API.  
+This example is targeted for rapid deployment with just a developer token. The example contains a front-end application and uses a client token authenticate with the Dolby.io API. 
 
-This example may also be adapted for hosting on other services. 
-
-For the purposes of this workshop, you'll need to sign-up to following platforms:
-- [Dolby.io](https://dolby.io)
-- [GitHub](https://github.com)
-- [Netlify](https://netlify.com)
+For the purposes of running this application, you'll need to sign-up to following platforms:
+- [Dolby.io](https://dolby.io/signup)
 
 The application works across all the majory browsers, however we recommend using Chrome to take advantage of additional features offered by the browser. 
 
-To get started sign-in to each platform in a different tab and follow along with the instructions: 
 
-##  How to Install and deploy this project on Netlify:
+##  Step One: Create an application and find your keys:
 
  - First you'll need an **Consumer API key** and **Consumer API secret** to comunicate with the Dolby.io APIs:
   
@@ -50,27 +20,15 @@ To get started sign-in to each platform in a different tab and follow along with
      - Create a new application and/or select an existing application.
      - When you select the application name, that will display your API keys. 
   
-  In the next step we will deploy to Netlify. Clicking that button will automatically clone this repo to your personal or organization's GitHub account, then deploy this application directly to Netlify, creating a fully functioning website and serverless function endpoint.
-  - Next click this button:
-  
-    [![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dolbyio-samples/workshop-ddd-dolby-io-comms-gettingstarted)
-
-  - You'll see an auth dialog, click **Connect to GitHub** to link your account. 
-  
-  ![Auth Dialog](readme/ddd-workshop-connect.png)
-   
-  -  Next, you'll need to fill-in a few values before hiting **Save and Deploy**; this will save a clone of this project to your GitHub account and deploy to Netlify. 
-
-  ![Auth Dialog](readme/ddd-workshop-auth-screen.png)
-
-- **Repository Name**  which will be set to the name of this repo; feel free to modify the name to something else if desired. This will be the name of the cloned version you'll see associated with your GitHub account or organization.
-- Fill-in the other fields with your **CONSUMER_KEY** and **CONSUMER_SECRET** which you can find in the Dolby.io dashboard.
-    These values will be stored in the site's deployment settings as pre-populated environment variables.
-- Click **Save and Deploy** to continue; and in about 45 seconds, Netlify will automatically clone the repo and create a new site on Netlify.
-
--  Once it has deployed, you'll find both the link to the GitHub clone and your project's URL at the top of the site overview page in your Netlify admin console, from there and you'll be able to visit the new site you just created.
-  
-
-  ![Auth Dialog](readme/ddd-workshop-complete.png)
-
+## Step Two: Set your Developer (Client) Token:
+This app requires a Developer Token, you will ned to generate a client token and update **/scripts/constants.js** file.
+  1. How to generate a token:  
+     - First create an Auth2 token, this token can be created by going to the [Dolby.io Application Summary page](https://dashboard.dolby.io) selecting an app, clicking on the API keys link, then copying your application's API **Consumer Key** and **Consumer secret** somewhere convenient.  
+     - Next go to our [REST API Documentation](https://docs.dolby.io/communications-apis/reference/get-client-access-token) and follow the instructions to create the client access token using the code example tool. 
+     - The default token expires in 3600 milliseconds or about 1 hour, just enough time to try out this app.  You may optionally to adjust the expriation time to a longer amount of time when you create your own developer client token.
+  2. Open **/scripts/constants.js** and if missing, replace the **apiToken** value with your developer token.
+  3. Run your app! 
+      ```
+      VS Code: Select the index.html file and run with live server.
+      ```
   Congrats! You've just deployed your first Dolby.io Communication API video conference app!
