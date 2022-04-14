@@ -49,33 +49,8 @@ const main = async () => {
   // Please read the documentation at:
   // https://docs.dolby.io/communications-apis/docs/initializing-javascript
 
-  try {
-    // Initialize the Voxeet SDK
-
-    let token = await developerToken();
-    await VoxeetSDK.initializeToken(token, developerToken);
-
-    // Initialize the UI
-    initUI();
-  } catch (e) {
-    alert('Something went wrong : ' + e);
-  }
-}
-
-main();
-
-/**
- * 
- *  Return the Developer Token 
- */
-
-async function developerToken() {
-  return  apiToken;
-}
-
-
-// URL to our token-generator function
-// const tokenServerURL = './api/token-generator';
+  // URL to our token-generator function
+const tokenServerURL = './api/token-generator';
 
 /**  Refresh Token is called when token expiration is 50% completed, this keeps the app initialized */
 /** We will use a post method to match our serverless function's restriction */
@@ -91,3 +66,22 @@ async function refreshToken() {
       console.error(error);
     });
 }
+
+
+  try {
+    // Initialize the Voxeet SDK
+
+    let token = await refreshToken();
+    await VoxeetSDK.initializeToken(token, refreshToken);
+
+    // Initialize the UI
+    initUI();
+  } catch (e) {
+    alert('Something went wrong : ' + e);
+  }
+}
+
+main();
+
+ 
+
