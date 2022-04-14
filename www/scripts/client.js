@@ -1,4 +1,4 @@
-const avengersNames = ['Thor', 'Cap', 'Tony Stark', 'Black Panther', 'Black Widow', 'Hulk', 'Spider-Man'];
+const avengersNames = ['Daniel', 'Kathy', 'Bryce', 'Galen', 'Bobby', 'Joe'];
 let randomName = avengersNames[Math.floor(Math.random() * avengersNames.length)];
 
 
