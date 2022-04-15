@@ -65,6 +65,8 @@ const initUI = async () => {
 						document.getElementById("start-video-btn").classList.add("d-none");
 						document.getElementById("stop-video-btn").classList.remove("d-none");
 						document.getElementById("alias-input").disabled = true;
+						document.getElementById("start-recording-btn").classList.remove("d-none");
+						document.getElementById("stop-recording-btn").classList.add("d-none");
 
 						// inform user
 						showSnack('You Joined!')
@@ -95,6 +97,8 @@ const initUI = async () => {
 						document.getElementById("stop-video-btn").classList.add("d-none");
 						document.getElementById("start-audio-btn").classList.add("d-none");
 						document.getElementById("stop-audio-btn").classList.add("d-none");
+						document.getElementById("start-recording-btn").classList.add("d-none");
+						document.getElementById("stop-recording-btn").classList.add("d-none");
 
 						// inform user
 						showSnack('You left!')
@@ -159,6 +163,39 @@ const initUI = async () => {
 			})
 			.catch((err) => console.error(err));
 	};
+
+	document.getElementById("start-recording-btn").onclick = async () => {
+		let recordStatus = document.getElementById("record-status");
+
+		// Start recording the conference
+		VoxeetSDK.recording
+			.start()
+			.then(() => {
+				recordStatus.innerText = "Recording...";
+				//update ui
+				document.getElementById("start-recording-btn").classList.add("d-none");
+				document.getElementById("stop-recording-btn").classList.remove("d-none");
+				showSnack('Recording Started.');
+			})
+			.catch((err) => console.error(err));
+	};
+
+	document.getElementById("stop-recording-btn").onclick = async () => {
+		let recordStatus = document.getElementById("record-status");
+
+		// Stop recording the conference
+		VoxeetSDK.recording
+			.stop()
+			.then(() => {
+				recordStatus.innerText = "";
+				//update ui
+				document.getElementById("start-recording-btn").classList.remove("d-none");
+				document.getElementById("stop-recording-btn").classList.add("d-none");
+				showSnack('Recording Ended.');
+			})
+			.catch((err) => console.error(err));
+	};
+
 	// end UIInit
 };
 
