@@ -28,7 +28,7 @@ To get started sign-in to each platform in a different tab and follow along with
   In the next step we will deploy to Netlify. Clicking that button will automatically clone this repo to your personal or organization's GitHub account, then deploy this application directly to Netlify, creating a fully functioning website and serverless function endpoint.
   - Next click this button:
   
-    [![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dolbyio-samples/comms-sdk-web-quickstart/tree/complete-netlify-deploy)
+    [![Deploy To Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dolbyio-samples/comms-sdk-web-quickstart)
 
   - You'll see an auth dialog, click **Connect to GitHub** to link your account. 
   
