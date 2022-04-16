@@ -36,8 +36,8 @@ Make server.sh executable:
 ```
 ```
 Run server.sh:
-cd wwww
-./server.sh
+% cd wwww
+% ./server.sh
 ```
 #### Open [**localhost:3000**](http://localhost:3000) to view your application. 
 
