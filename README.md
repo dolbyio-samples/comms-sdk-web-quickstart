@@ -27,10 +27,19 @@ You'll need to run this app on localhost using VS code or if you prefer with any
 VS Code:
 Select the www/index.html file and run with live server.
 ```
-```
-Python:
-cd www
-python -m SimpleHTTPServer 3000
-```
 
-  Congrats! You've just deployed your first Dolby.io Communication API video conference app!
+
+To make easer to run, we've included the python server in a shell script. 
+```
+To make server.sh executable:
+cd www
+chmod +x server.sh  
+```
+```
+Run server.sh:
+cd wwww
+./server.sh
+```
+#### Open [**localhost:3000**](http://localhost:3000) to view your application. 
+
+Congrats! You've just deployed your first Dolby.io Communication API video conference app!
