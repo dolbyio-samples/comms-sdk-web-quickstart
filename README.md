@@ -1,6 +1,6 @@
 # Communications APIs Quick Start Application
 
-## About this Quick Start Application (v quickstart)
+## About this Quick Start Application Workshop (v quickstart)
  
 This example is targeted for rapid deployment with just a developer token. The example contains a front-end application and uses a client token authenticate with the Dolby.io API. 
 
@@ -10,7 +10,7 @@ For the purposes of running this application, you'll need to sign-up to followin
 The application works across all the majory browsers, however we recommend using Chrome to take advantage of additional features offered by the browser. 
 
 
-##  Step One: Create an application and find your keys:
+##  Step One: Download this application and find your keys:
 
  - First you'll need an **Consumer API key** and **Consumer API secret** to comunicate with the Dolby.io APIs:
   
