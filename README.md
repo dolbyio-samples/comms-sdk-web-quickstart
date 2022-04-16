@@ -13,7 +13,7 @@ The application works across all the majory browsers, however we recommend using
 ## Download this application and find your developer token:
 
  - First you'll need a client developer token to initialize our SDK. 
- - Just login to our dashboard,select your application, click demos and copy the token.
+ - Just login to our dashboard, select your application, click demos and copy the unique token.
 
 ![Client token example](assets/../www/assets/img/client-token.png)
 
@@ -28,12 +28,11 @@ VS Code:
 Select the www/index.html file and run with live server.
 ```
 
-
-To make easer to run, we've included the python server in a shell script. 
+Or if you prefer to use python's server, we've included a simple python server in a shell script. 
 ```
-To make server.sh executable:
-cd www
-chmod +x server.sh  
+Make server.sh executable:
+% cd www
+% chmod +x server.sh  
 ```
 ```
 Run server.sh:
