@@ -47,6 +47,32 @@
     </nav>
 
     <main class="page landing-page">
+        <div id="init-modal" class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Dolby.io Basic Conference</h5>
+                        <a class="text-secondary text-decoration-none" href="https://dashboard.dolby.io" target="_blank">Get Your Keys</a>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="input-consumer-key" class="form-label">Dolby.io Consumer Key:</label>
+                            <input id="input-consumer-key" type="text" class="form-control" placeholder="Consumer Key">
+                        </div>
+                        <div class="mb-3">
+                            <label for="input-consumer-secret" class="form-label">Dolby.io Consumer Secret:</label>
+                            <input id="input-consumer-secret" type="text" class="form-control"
+                                placeholder="Consumer Secret">
+                        </div>
+                    </div>
+                    <div class="modal-footer">   
+                        <button id="btn-initialize" type="button" class="btn btn-primary">Initialize the SDK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   
         <section class="video-block container-sm m-0">
             <!-- <div class="container"> -->
             <div id="app">
@@ -113,19 +139,21 @@
         <div class="container text-sm-center navbar">
             <a class="text-info text-decoration-none" href="https://dashboard.dolby.io" target="_blank">Dolby.io
                 Dashboard</a>
+                <a id="shareLink" class="text-info text-decoration-none" href="#" target="_blank">Share This Demo</a>
             <a class="text-info text-decoration-none"
                 href="https://github.com/dolbyio-samples/comms-sdk-web-quickstart/tree/quickstart" target="_blank">
                 View Code on GitHub</a>
         </div>
     </footer>
     <!-- End UI -->
-    <!-- Application Code -->
-    <script type="text/javascript" src="scripts/constants.js"></script>
-    <script type="text/javascript" src="scripts/client.js"></script>
 
 
     <!-- Bootstrap Theme -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- Application Code -->
+    <script type="text/javascript" src="scripts/constants.js"></script>
+    <script type="text/javascript" src="scripts/client.js"></script>
+    <!-- Theme -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
     <script src="assets/js/theme.js"></script>
 </body>
