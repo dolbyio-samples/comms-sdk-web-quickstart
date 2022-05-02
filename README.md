@@ -17,6 +17,8 @@ git clone https://github.com/dolbyio-samples/comms-sdk-web-quickstart.git
 
 cd comms-sdk-web-quickstart
 
+npm install
+
 npm run start
 
 ```
